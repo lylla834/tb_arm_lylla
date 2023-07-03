@@ -1,0 +1,224 @@
+{
+  "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Resources/deployments/Microsoft.Template-20230703120457",
+  "name": "Microsoft.Template-20230703120457",
+  "type": "Microsoft.Resources/deployments",
+  "properties": {
+    "templateLink": {
+      "uri": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/quickstarts/microsoft.compute/vm-simple-linux/azuredeploy.json",
+      "contentVersion": "1.0.0.0"
+    },
+    "templateHash": "11453007703022839041",
+    "parameters": {
+      "vmName": {
+        "type": "String",
+        "value": "simpleLinuxVM-lylla"
+      },
+      "adminUsername": {
+        "type": "String",
+        "value": "lylla"
+      },
+      "authenticationType": {
+        "type": "String",
+        "value": "Jevis@ambronay"
+      },
+      "adminPasswordOrKey": {
+        "type": "SecureString"
+      },
+      "dnsLabelPrefix": {
+        "type": "String",
+        "value": "simplelinuxvm-lylla-cdy3h33avrkjs"
+      },
+      "ubuntuOSVersion": {
+        "type": "String",
+        "value": "Ubuntu-2004"
+      },
+      "location": {
+        "type": "String",
+        "value": "westeurope"
+      },
+      "vmSize": {
+        "type": "String",
+        "value": "Standard_D2s_v3"
+      },
+      "virtualNetworkName": {
+        "type": "String",
+        "value": "vNet"
+      },
+      "subnetName": {
+        "type": "String",
+        "value": "Subnet"
+      },
+      "networkSecurityGroupName": {
+        "type": "String",
+        "value": "SecGroupNet"
+      },
+      "securityType": {
+        "type": "String",
+        "value": "TrustedLaunch"
+      }
+    },
+    "mode": "Incremental",
+    "debugSetting": {
+      "detailLevel": "None"
+    },
+    "provisioningState": "Succeeded",
+    "timestamp": "2023-07-03T10:05:47.3605545Z",
+    "duration": "PT51.2804142S",
+    "correlationId": "0e3c554c-9047-4cc2-8096-522623fa9567",
+    "providers": [
+      {
+        "namespace": "Microsoft.Network",
+        "resourceTypes": [
+          {
+            "resourceType": "networkInterfaces",
+            "locations": [
+              "westeurope"
+            ]
+          },
+          {
+            "resourceType": "networkSecurityGroups",
+            "locations": [
+              "westeurope"
+            ]
+          },
+          {
+            "resourceType": "virtualNetworks",
+            "locations": [
+              "westeurope"
+            ]
+          },
+          {
+            "resourceType": "virtualNetworks/subnets",
+            "locations": [
+              null
+            ]
+          },
+          {
+            "resourceType": "publicIPAddresses",
+            "locations": [
+              "westeurope"
+            ]
+          }
+        ]
+      },
+      {
+        "namespace": "Microsoft.Compute",
+        "resourceTypes": [
+          {
+            "resourceType": "virtualMachines",
+            "locations": [
+              "westeurope"
+            ]
+          },
+          {
+            "resourceType": "virtualMachines/extensions",
+            "locations": [
+              "westeurope"
+            ]
+          }
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Network/networkSecurityGroups/SecGroupNet",
+            "resourceType": "Microsoft.Network/networkSecurityGroups",
+            "resourceName": "SecGroupNet"
+          },
+          {
+            "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Network/publicIPAddresses/simpleLinuxVM-lyllaPublicIP",
+            "resourceType": "Microsoft.Network/publicIPAddresses",
+            "resourceName": "simpleLinuxVM-lyllaPublicIP"
+          },
+          {
+            "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Network/virtualNetworks/vNet/subnets/Subnet",
+            "resourceType": "Microsoft.Network/virtualNetworks/subnets",
+            "resourceName": "vNet/Subnet"
+          }
+        ],
+        "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Network/networkInterfaces/simpleLinuxVM-lyllaNetInt",
+        "resourceType": "Microsoft.Network/networkInterfaces",
+        "resourceName": "simpleLinuxVM-lyllaNetInt"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Network/virtualNetworks/vNet",
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "resourceName": "vNet"
+          }
+        ],
+        "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Network/virtualNetworks/vNet/subnets/Subnet",
+        "resourceType": "Microsoft.Network/virtualNetworks/subnets",
+        "resourceName": "vNet/Subnet"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Network/networkInterfaces/simpleLinuxVM-lyllaNetInt",
+            "resourceType": "Microsoft.Network/networkInterfaces",
+            "resourceName": "simpleLinuxVM-lyllaNetInt"
+          }
+        ],
+        "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Compute/virtualMachines/simpleLinuxVM-lylla",
+        "resourceType": "Microsoft.Compute/virtualMachines",
+        "resourceName": "simpleLinuxVM-lylla"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Compute/virtualMachines/simpleLinuxVM-lylla",
+            "resourceType": "Microsoft.Compute/virtualMachines",
+            "resourceName": "simpleLinuxVM-lylla"
+          }
+        ],
+        "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Compute/virtualMachines/simpleLinuxVM-lylla/extensions/GuestAttestation",
+        "resourceType": "Microsoft.Compute/virtualMachines/extensions",
+        "resourceName": "simpleLinuxVM-lylla/GuestAttestation"
+      }
+    ],
+    "outputs": {
+      "adminUsername": {
+        "type": "String",
+        "value": "lylla"
+      },
+      "hostname": {
+        "type": "String",
+        "value": "simplelinuxvm-lylla-cdy3h33avrkjs.westeurope.cloudapp.azure.com"
+      },
+      "sshCommand": {
+        "type": "String",
+        "value": "ssh lylla@simplelinuxvm-lylla-cdy3h33avrkjs.westeurope.cloudapp.azure.com"
+      }
+    },
+    "outputResources": [
+      {
+        "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Compute/virtualMachines/simpleLinuxVM-lylla"
+      },
+      {
+        "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Compute/virtualMachines/simpleLinuxVM-lylla/extensions/GuestAttestation"
+      },
+      {
+        "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Network/networkInterfaces/simpleLinuxVM-lyllaNetInt"
+      },
+      {
+        "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Network/networkSecurityGroups/SecGroupNet"
+      },
+      {
+        "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Network/publicIPAddresses/simpleLinuxVM-lyllaPublicIP"
+      },
+      {
+        "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Network/virtualNetworks/vNet"
+      },
+      {
+        "id": "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1/resourceGroups/armlylla/providers/Microsoft.Network/virtualNetworks/vNet/subnets/Subnet"
+      }
+    ],
+    "validationLevel": "Template"
+  },
+  "tags": {
+    "marketplaceItemId": "Microsoft.Template"
+  }
+}
